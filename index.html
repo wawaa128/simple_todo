@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple ToDo</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+    <div class="todo-container">
+        <h1>My ToDo</h1>
+
+        <div class="input-area">
+            <input type="text" id="taskInput" placeholder="新しいタスクを入力">
+            <button id="addButton">追加</button>
+        </div>
+
+        <ul id="taskList">
+            </ul>
+    </div>
+
+    <script>
+        // --- JavaScript ---
+
+        // 1. 必要なHTML要素を取得
+        const taskInput = document.getElementById('taskInput');
+        const addButton = document.getElementById('addButton');
+        const taskList = document.getElementById('taskList');
+
+        // 2. 「追加」ボタンがクリックされたときの処理
+        addButton.addEventListener('click', function() {
+            const taskText = taskInput.value.trim(); // 入力されたテキストを取得し、前後の空白を削除
+
+            if (taskText !== "") { // テキストが空でなければタスクを追加
+                addTask(taskText);
+                taskInput.value = ""; // 入力欄を空にする
+                taskInput.focus();    // 入力欄にフォーカスを戻す
+            } else {
+                alert("タスクを入力してください。");
+            }
+        });
+
+        // (発展) Enterキーでもタスクを追加できるようにする
+        taskInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                addButton.click(); // 追加ボタンのクリックイベントを発火させる
+            }
+        });
+
+
+        // 3. タスクをリストに追加する関数
+        function addTask(text) {
+            // 新しい<li>要素を作成
+            const listItem = document.createElement('li');
+            listItem.textContent = text; // <li>要素にタスクのテキストを設定
+
+            // (ここに将来、完了ボタンや削除ボタンを追加することもできます)
+
+            // 作成した<li>要素を<ul>リストに追加
+            taskList.appendChild(listItem);
+        }
+
+        // --- ここまでJavaScript ---
+    </script>
+
+</body>
+</html>
