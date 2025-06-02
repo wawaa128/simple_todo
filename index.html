@@ -67,6 +67,8 @@
             const deleteButton = document.createElement('button');
             deleteButton.innerHTML = '削除';
             listItem.appendChild(deleteButton);
+            
+            
 
             deleteButton.addEventListener('click', function() {
                 taskList.removeChild(listItem); // 親要素から<li>要素を削除

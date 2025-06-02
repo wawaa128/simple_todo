@@ -10,7 +10,7 @@ body {
 }
 
 .todo-container {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -31,7 +31,7 @@ h1 {
 #taskInput {
     flex-grow: 1; /* 入力欄ができるだけ幅を取るように */
     padding: 10px;
-    border: 2px solid #ddd;
+    border: 2px solid #ffffff;
     border-radius: 5px 0 0 5px; /* 左側の角だけ丸める */
     font-size: 1em;
 }
@@ -39,7 +39,7 @@ h1 {
 #addButton {
     padding: 10px 15px;
     background-color: #5cb85c; /* 緑系の色 */
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 0 5px 5px 0; /* 右側の角だけ丸める */
     cursor: pointer;
@@ -58,8 +58,8 @@ h1 {
 }
 
 #taskList li {
-    background-color: #f9f9f9;
-    border: 1px solid #eee;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
     padding: 10px;
     margin-bottom: 8px;
     border-radius: 5px;
@@ -71,5 +71,15 @@ h1 {
 /* JavaScriptで動的にスタイルを変更するためのクラス (例) */
 .completed {
     text-decoration: line-through; /* 取り消し線 */
-    color: #aaa;
+    color: #bd7676;
 }
+.delete-button {
+    background-color: #dc3545; /* 赤色 */
+    color: white; /* 文字色を白に */
+    border: none; /* 枠線をなくす */
+    padding: 5px 10px; /* 内側の余白 */
+    margin-left: 5px; /* 左側に少し余白 */
+    cursor: pointer; /* マウスオーバー時にカーソルを指マークに */
+    border-radius: 3px; /* 角を少し丸くする */
+}
+
